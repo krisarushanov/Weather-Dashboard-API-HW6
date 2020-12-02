@@ -1,0 +1,38 @@
+
+html { 
+    background: url(jakob-owens-oowC8MjQddM-unsplash.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+
+body {
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+    align-items:center;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container {
+	align-items: center;
+	display: center;
+	
+}
+
+
+ .header {
+    text-align:center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 10px;
+    color:white;
+
+ }
+
+
+
+
