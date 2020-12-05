@@ -26,13 +26,24 @@ body {
 
  .header {
     text-align:center;
-    margin-top: 10px;
-    margin-bottom: 20px;
     height: 10px;
     color:white;
+    font-size: 30px;
 
  }
 
+ div.listMainTemp {
+  color:white;
+  font-size: 50px;
+}
 
+div.listWeatherMain {
+  color:white;
+  font-size: 50px;
+}
 
+div.listWeatherDescription {
+  color:white;
+  font-size: 50px;
+}
 
