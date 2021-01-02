@@ -40,34 +40,27 @@ div.listWeatherIcon {
  div.cityName {
   color:black;
   font-size: 25px;
+  font-weight:bold;
   align-content: center;
 }
  
 
- div.listMainTemp {
-  color:black;
-  font-size: 50px;
-  align-content: center;
+div.MainTemp {
+  font-size: 40px;
 }
 
-div.listWeatherMain {
-  color:black;
-  font-size: 25px;
-  align-content: center;
+div.WeatherMain {
+  font-size: 20px;
 }
 
-div.listWeatherDescription {
-  color:black;
-  font-size: 25px;
-  align-content: center;
+div.WeatherDescription {
+  font-size: 20px;
 }
 
-div.listMainHumidity {
-  color:black;
-  font-size: 25px;
+div.MainHumidity {
+  font-size: 20px;
 }
 
-div.listWindSpeed {
-  color:black;
-  font-size: 25px;
+div.WindSpeed {
+  font-size: 20px;
 }
