@@ -8,4 +8,4 @@ Weather Dashboard features search box used to explore weather conditions and for
 
 ### API
 Weather Dashboard uses [OpenWeather API](https://openweathermap.org/api)
-
+<img width="470" alt="weather app snip" src="https://user-images.githubusercontent.com/70172286/103453629-ab6d4a00-4c90-11eb-8884-af68dc1508e8.PNG">
