@@ -2,7 +2,7 @@
 
 ## Description
 
-Weather Dashboard features search box used to explore weather conditions and forecast for your city.
+Weather Dashboard features search box used to explore weather conditions and forecast for your city. 
 
 ## Technology
 
