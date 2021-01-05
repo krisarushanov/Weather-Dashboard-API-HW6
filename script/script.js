@@ -37,7 +37,7 @@ $(document).ready(function(){
         MainHumidity.text("Humidity: " + response.main.humidity + "%");
         WindSpeeed.text("Wind Speed: " + response.wind.speed +" m/hr")
 
-/* Display icon response by concatenating var iconcode with icon URL */
+        /* Display icon response by concatenating var iconcode with icon URL */
         var iconcode = response.weather[0].icon;
                 
         $(".listWeatherIcon").html("<img src='http://openweathermap.org/img/w/" + iconcode + ".png' alt='Icon depicting current weather.'>");
@@ -96,6 +96,19 @@ $('#searchCity').click(function(){
 
 
       });
-    });
+     /* Search History console logging the city value, need to render to html */
+     function setSearchHistory() {
+      localStorage.setItem("savedCity",city);
+     }
+      setSearchHistory = localStorage.getItem("savedCity", city);
+
+      console.log (setSearchHistory);
+      
+     
+
+     
+    
   });
- 
+});
+
+
