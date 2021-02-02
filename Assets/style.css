@@ -64,3 +64,7 @@ div.MainHumidity {
 div.WindSpeed {
   font-size: 20px;
 }
+
+div.uvIndex {
+  font-size: 20px;
+}

@@ -6,6 +6,7 @@ var WeatherDescription = $(".WeatherDescription");
 var MainHumidity = $(".MainHumidity");
 var WindSpeeed = $(".WindSpeed");
 var forecast =$(".forecast")
+
 /* Code written inside method will run once page DOM is ready to execute */
 
 $(document).ready(function(){
@@ -41,12 +42,10 @@ $(document).ready(function(){
         var iconcode = response.weather[0].icon;
                 
         $(".listWeatherIcon").html("<img src='http://openweathermap.org/img/w/" + iconcode + ".png' alt='Icon depicting current weather.'>");
-                         
-     
-            
     });   
        
  });
+
 
 /*Setting variables for Forecast */
 var dayOneCard = $(".dayOneCard");
@@ -62,7 +61,7 @@ $('#searchCity').click(function(){
 
   /* Getting input value using input ID and val method */
        var city = $("#yourCity").val();
-  
+       
   /* Use AJAX method to retrieve data*/
   
      $.ajax({
@@ -92,23 +91,41 @@ $('#searchCity').click(function(){
         dayFourCard.text("Date: " + response.list[24].dt_txt + " " + "Condition: " + response.list[24].weather[0].main);
         dayFiveCard.text("Date: " + response.list[32].dt_txt + " " + "Condition: " + response.list[32].weather[0].main);
       
-          
+      // Uv Index  
+        var latUv = response.city.coord.lat;
+        var lonUv = response.city.coord.lon;
+        var uvIndex = $(".uvIndex");
+        
+      
 
+        console.log(lonUv)
+        console.log(latUv)
+
+        $.ajax({
+  
+          url: "http://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + latUv +  "&lon=" + lonUv +  "&APPID=63d898fccb40c6189c8cd5093662abf9",
+          method: "GET",
+               
+          }).then (function(response){
+    
+        console.log(response[0].value); 
+        uvIndex.text("UV Index: " + response[0].value );
+
+     
 
       });
-     /* Search History console logging the city value, need to render to html */
-     function setSearchHistory() {
-      localStorage.setItem("savedCity",city);
-     }
-      setSearchHistory = localStorage.getItem("savedCity", city);
-
-      console.log (setSearchHistory);
-      
-     
-
-     
+         /* Search History console logging the city value, need to render to html */
+         function setSearchHistory() {
+          localStorage.setItem("savedCity",city);
+         }
+          setSearchHistory = localStorage.getItem("savedCity", city);
+          console.log(city);
+          console.log (setSearchHistory);
+          
+         
     
+         
+        
+      });
+    });
   });
-});
-
-
