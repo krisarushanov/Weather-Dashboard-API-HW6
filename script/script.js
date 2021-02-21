@@ -6,7 +6,7 @@ var WeatherDescription = $(".WeatherDescription");
 var MainHumidity = $(".MainHumidity");
 var WindSpeeed = $(".WindSpeed");
 var forecast =$(".forecast")
-
+var key = "63d898fccb40c6189c8cd5093662abf9"
 /* Code written inside method will run once page DOM is ready to execute */
 
 $(document).ready(function(){
@@ -17,12 +17,12 @@ $(document).ready(function(){
 
 /* Getting input value using input ID and val method */
      var city = $("#yourCity").val();
-
+     
 /* Use AJAX method to retrieve data for CURRENT WEATHER*/
 
    $.ajax({
 
-    url: "http://api.openweathermap.org/data/2.5/weather?q=" + city +  "&units=imperial" +    "&APPID=63d898fccb40c6189c8cd5093662abf9",
+    url: "http://api.openweathermap.org/data/2.5/weather?q=" + city +  "&units=imperial" +    "&APPID=" + key,
     method: "GET",
          
     }).then (function(response){
@@ -43,9 +43,22 @@ $(document).ready(function(){
                 
         $(".listWeatherIcon").html("<img src='http://openweathermap.org/img/w/" + iconcode + ".png' alt='Icon depicting current weather.'>");
     });   
-       
- });
 
+// Search History console logging the city value, need to render to html//
+
+          //var localStorageSearch = document.getElementById ('yourCity').value;
+          //var localStorageItem = localStorage.getItem(localStorageSearch); 
+          //console.log(localStorageItem);
+          //https://www.raymondcamden.com/2012/07/13/LocalStorage-Example-Storing-previous-searches
+
+         setSearchHistory = localStorage.setItem("savedCity",city);
+          function setSearchHistory() {
+            localStorage.setItem("savedCity",city);
+           }
+            setSearchHistory = localStorage.getItem("savedCity", city);
+            console.log(city);
+           console.log (setSearchHistory);
+ });
 
 /*Setting variables for Forecast */
 var dayOneCard = $(".dayOneCard");
@@ -60,13 +73,13 @@ var dayFiveCard = $(".dayFiveCard");
 $('#searchCity').click(function(){
 
   /* Getting input value using input ID and val method */
-       var city = $("#yourCity").val();
-       
+       var city = $("#yourCity").val();     
+      
   /* Use AJAX method to retrieve data*/
   
      $.ajax({
   
-      url: "http://api.openweathermap.org/data/2.5/forecast?q=" + city +  "&units=imperial" +    "&APPID=63d898fccb40c6189c8cd5093662abf9",
+      url: "http://api.openweathermap.org/data/2.5/forecast?q=" + city +  "&units=imperial" +    "&APPID=" + key,
       method: "GET",
            
       }).then (function(response){
@@ -111,10 +124,16 @@ $('#searchCity').click(function(){
         console.log(response[0].value); 
         uvIndex.text("UV Index: " + response[0].value );
 
-     
+      
 
       });
-         /* Search History console logging the city value, need to render to html */
+         // Search History console logging the city value, need to render to html//
+
+          //var localStorageSearch = document.getElementById ('yourCity').value;
+          //var localStorageItem = localStorage.getItem(localStorageSearch); 
+          //console.log(localStorageItem);
+          //https://www.raymondcamden.com/2012/07/13/LocalStorage-Example-Storing-previous-searches
+
          function setSearchHistory() {
           localStorage.setItem("savedCity",city);
          }
