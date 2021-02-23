@@ -29,7 +29,7 @@ $(document).ready(function(){
               
 /* Render response data to HTML elements  */
 
-      console.log(response);
+      consgole.log(response);
         /*listWeatherIcon.attr ("src", "https://openweathermap.org/img/w/" + response.list[0].weather[0].icon +".png");  */
         cityName.text("Current Weather In: " + response.name);
         MainTemp.text(response.main.temp + "F");
@@ -46,10 +46,7 @@ $(document).ready(function(){
 
 // Search History console logging the city value, need to render to html//
 
-          //var localStorageSearch = document.getElementById ('yourCity').value;
-          //var localStorageItem = localStorage.getItem(localStorageSearch); 
-          //console.log(localStorageItem);
-          //https://www.raymondcamden.com/2012/07/13/LocalStorage-Example-Storing-previous-searches
+        
 
          setSearchHistory = localStorage.setItem("savedCity",city);
           function setSearchHistory() {
@@ -133,8 +130,7 @@ $('#searchCity').click(function(){
           //var localStorageSearch = document.getElementById ('yourCity').value;
           //var localStorageItem = localStorage.getItem(localStorageSearch); 
           //console.log(localStorageItem);
-          //https://www.raymondcamden.com/2012/07/13/LocalStorage-Example-Storing-previous-searches
-
+          
          function setSearchHistory() {
           localStorage.setItem("savedCity",city);
          }
