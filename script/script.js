@@ -117,7 +117,7 @@ $('#searchCity').click(function(){
 
         $.ajax({
   
-          url: "http://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + latUv +  "&lon=" + lonUv +  "&APPID=63d898fccb40c6189c8cd5093662abf9",
+          url: "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + latUv +  "&lon=" + lonUv +  "&APPID=63d898fccb40c6189c8cd5093662abf9",
           method: "GET",
                
           }).then (function(response){
