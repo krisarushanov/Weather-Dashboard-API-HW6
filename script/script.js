@@ -22,7 +22,7 @@ $(document).ready(function(){
 
    $.ajax({
 
-    url: "http://api.openweathermap.org/data/2.5/weather?q=" + city +  "&units=imperial" +    "&APPID=" + key,
+    url: "https://api.openweathermap.org/data/2.5/weather?q=" + city +  "&units=imperial" +    "&APPID=" + key,
     method: "GET",
          
     }).then (function(response){
@@ -55,6 +55,7 @@ $(document).ready(function(){
           function setSearchHistory() {
             localStorage.setItem("savedCity",city);
            }
+           // NEED TO GET ITEM AND RENDER TO HTML
             setSearchHistory = localStorage.getItem("savedCity", city);
             console.log(city);
            console.log (setSearchHistory);
@@ -79,7 +80,7 @@ $('#searchCity').click(function(){
   
      $.ajax({
   
-      url: "http://api.openweathermap.org/data/2.5/forecast?q=" + city +  "&units=imperial" +    "&APPID=" + key,
+      url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city +  "&units=imperial" +    "&APPID=" + key,
       method: "GET",
            
       }).then (function(response){
